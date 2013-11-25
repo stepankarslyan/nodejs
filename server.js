@@ -6,6 +6,8 @@ app.configure(function() {
  // Third time !!! Remove empty lines without meaning !!!!
 });
 
+// Add webservice to use geolocation
+
 var port = 8080;
 app.listen(port);
 console.log("Server started on http://localhost:" + port);
