@@ -1,3 +1,5 @@
+// No you mixed the meaning of service, it's responsible of getting location not to send it to server
+
 
 var locationService = {
 
