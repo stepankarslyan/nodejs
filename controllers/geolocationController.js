@@ -2,20 +2,11 @@ var geolocationService = require('../services/geolocationService');
 
 exports.saveGeolocation = function(req, res) {
 	
-	var geolocation = req.query;
+	var geolocation = JSON.parse(req.body.geolocation);
+	console.log(geolocation);
 	
-	geolocationService.append(geolocation, function(isSaved) {
-		
-		// Of if you want to return boolean why not simply
-		// res.send(isSaved);
-		// you can use simply saved or even done
-		
-		if (isSaved) {
-			res.send(true);
-		}
-		else {
-			res.send(false);
-		}
+	geolocationService.make.appending(geolocation, function(isSaved) {
+		res.send(isSaved);
 	});
 	
 };

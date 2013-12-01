@@ -5,9 +5,10 @@ var geolocationController = require('./controllers/geolocationController');
 
 app.configure(function() {
   app.use(express.static(__dirname + '/public'));
+  app.use(express.bodyParser());
 });
 
-app.get('/geolocation', geolocationController.saveGeolocation);
+app.post('/geolocation', geolocationController.saveGeolocation);
 
 var port = 8080;
 app.listen(port);
