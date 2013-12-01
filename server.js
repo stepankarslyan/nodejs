@@ -1,12 +1,11 @@
 var express = require('express');
 var app = express();
+var controller = require(".public/js/controller.js"); 
 
 app.configure(function() {
   app.use(express.static(__dirname + '/public'));
- // Third time !!! Remove empty lines without meaning !!!!
 });
-
-// Add webservice to use geolocation
+app.get("/location", controller.getLocation);
 
 var port = 8080;
 app.listen(port);

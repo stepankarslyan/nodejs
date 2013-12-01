@@ -1,9 +1,8 @@
 	var showMyLocation = function() {
-	
-		var onSuccess = function(position) {
-			var element = document.getElementById("geolocation");
+		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 			
-			element.innerHTML = 'Latitude: ' + position.coords.latitude + '<br />' +
+			var onSuccess = function(position) {
+				'Latitude: ' + position.coords.latitude + '<br />' +
 				'Longitude: ' + position.coords.longitude + '<br />' +
 				'Altitude: ' + position.coords.altitude + '<br />' +
 				'Accuracy: ' + position.coords.accuracy + '<br />' +
@@ -11,10 +10,11 @@
 				'Heading: ' + position.coords.heading + '<br />' +
 				'Speed: ' + position.coords.speed + '<br />' +
 				'Timestamp: ' + position.timestamp + '<br />';
-		};
+			};
 
-		var onError = function(error) {
+			var onError = function(error) {
 				alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
-		}
-		navigator.geolocation.getCurrentPosition(onSuccess, onError);
+			}
+	
 	};
+	exports.showMyLocation = showMyLocation;
