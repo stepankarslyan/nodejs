@@ -1,11 +1,11 @@
-App.geolocation = {
+app.geolocationController = {
 
 	getLocation: function() {
-		navigator.geolocation.getCurrentPosition(this.onSuccess, this.onError);
+		app.geolocationService.getLocation(this.onSuccess, this.onError);
 	},
 	
 	onSuccess: function(position) {
-		var geolocation = {
+		var location = {
 			latitude: position.coords.latitude,
 			longitude: position.coords.longitude,
 			altitude: position.coords.altitude,
@@ -15,9 +15,23 @@ App.geolocation = {
 			speed: position.coords.speed,
 			timestamp: position.timestamp,
 		};
-		
-		App.locationService.saveLocation(geolocation, function(isSaved) {
-			App.geolocation.displaySuccess(isSaved);
+		app.geolocationController.sendToServer(location);
+	},
+
+	onError: function(error) {
+		alert('code: ' + error.code + ' message: ' + error.message);
+	},
+	
+	sendToServer: function(location) {
+		$.ajax({
+			url: 'geolocation',
+			method: 'POST',
+			data: {
+				location: JSON.stringify(location)
+			},
+			success: function(isSaved) {
+				app.geolocationController.displaySuccess(isSaved);
+			}
 		});
 	},
 	
@@ -28,10 +42,6 @@ App.geolocation = {
 		else {
 			alert('your geolocation information is NOT SAVED !!!');
 		}
-	},
-
-	onError: function(error) {
-		alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
 	}
 };
 

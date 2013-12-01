@@ -1,16 +1,6 @@
-App.locationService = {
+app.geolocationService = {
 
-	saveLocation: function(geolocation, done) {
-		$.ajax({
-			method: 'POST',
-			url: '/geolocation',
-			data: {
-				geolocation: JSON.stringify(geolocation)
-			},
-			success: function(isSaved) {
-				done(isSaved);
-			}
-		});
+	getLocation: function(onSuccess, onError) {
+		navigator.geolocation.getCurrentPosition(onSuccess, onError);	
 	}
-	
 };
