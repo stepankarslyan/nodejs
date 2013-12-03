@@ -1,0 +1,3 @@
+
+Date: Wed Dec 04 2013 00:44:31 GMT+0400 (AMT)
+{"latitude":40.061007,"longitude":44.443186999999995,"altitude":null,"accuracy":36,"altitudeAccuracy":null,"heading":null,"speed":null,"timestamp":1386103463227}
