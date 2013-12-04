@@ -8,6 +8,7 @@ app.configure(function() {
   app.use(express.bodyParser());
 });
 
+// use geolocationController.log
 app.post('/geolocation', geolocationController.location.save);
 
 var port = 8080;
