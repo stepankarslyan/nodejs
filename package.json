@@ -1,11 +1,9 @@
 {
-  "name": "PhoneGap app",
+  "name": "PhoneGap_app",
   "description": "server for phongap app",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "express": "*",
-    "mongoose": "*",
-    "underscore": "*"
+    "express": "3.0.0"
   }
 }
