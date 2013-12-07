@@ -7,6 +7,7 @@ module.exports = {
 		console.log(location);
 	
 		geolocationService.log(location, function(isSaved) {
+			// Don't use boolean to tell if succeed, but in REST use http code 200 or 500
 			res.send(isSaved);
 		});	
 	}
