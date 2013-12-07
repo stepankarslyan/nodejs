@@ -6,16 +6,10 @@ var geolocationController = require('./controller/geolocationController');
 
 app.configure(function() {
   app.use(express.static(__dirname + '/public'));
-<<<<<<< HEAD
-});
-
-//app.get("/location", controller.getLocation);
-=======
   app.use(express.bodyParser());
 });
 
 app.post('/geolocation', geolocationController.log);
->>>>>>> Levon
 
 var port = 8080;
 app.listen(port);
