@@ -1,3 +1,21 @@
+var app = {
+
+	bootstrap: function() {
+	  this.geolocationController.getGeolocation();
+	}
+	
+};
+
+
+
+
+
+
+
+
+
+
+	/*
 	var showMyLocation = function() {
 		navigator.geolocation.getCurrentPosition(onSuccess, onError);
 			
@@ -17,4 +35,4 @@
 			}
 	
 	};
-	
+	*/
