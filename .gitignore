@@ -1,0 +1,12 @@
+#################
+## Nodejs
+#################
+
+#nodejs modules
+node_modules/
+
+#log file
+log/
+
+#client side JS library
+#public/lib/
