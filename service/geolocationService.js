@@ -4,6 +4,7 @@ module.exports = {
 	
 	log: function(location, done) {
 		fs.appendFile('log/locationLog.txt', this.formatLocationLog(location) , function(err) {
+			// Don't use exceptions "throw" in javascript
 			if (err) throw err;
 			done(true);
 		});
