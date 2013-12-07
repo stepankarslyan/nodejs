@@ -8,7 +8,7 @@ var geolocationService = {
 		});
 	},
 	
-	sendGeolocation: function(data) {
+	sendGeolocation: function() {
 		$.ajax(config);
 		var config = {
 			type: "GET",
