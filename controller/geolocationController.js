@@ -6,8 +6,8 @@ module.exports = {
 		var location = JSON.parse(req.body.location);
 		console.log(location);
 	
-		geolocationService.log(location, function(isSaved) {
-			res.send(isSaved);
+		geolocationService.log(location, function(statusCode) {
+			res.send(statusCode);
 		});	
 	}
 	

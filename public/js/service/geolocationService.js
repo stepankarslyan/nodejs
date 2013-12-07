@@ -1,7 +1,15 @@
 app.geolocationService = {
 
-	getLocation: function(onSuccess, onError) {
-		navigator.geolocation.getCurrentPosition(onSuccess, onError);	
+	getGeolocation: function(config) {
+	
+		navigator.geolocation.getCurrentPosition(
+			function(position) {
+				config.onSuccess(position);
+			},
+			function(error) {
+				config.onError(error);
+			}
+		);	
 	}
 	
 };
