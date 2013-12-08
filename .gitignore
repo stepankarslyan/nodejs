@@ -5,11 +5,5 @@
 #nodejs modules
 node_modules/
 
-#log file
-temp/log/
-
-#uploaded pictures
-temp/pictures
-
 #client side JS library
 bower_components

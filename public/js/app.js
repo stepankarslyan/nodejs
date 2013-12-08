@@ -1,7 +1,7 @@
 var app = {
 
 	bootstrap: function() {
-	  this.geolocationController.getGeolocation();
+		this.geolocationController.getGeolocation();
 	}
 	
 };
