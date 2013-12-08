@@ -9,4 +9,4 @@ node_modules/
 log/
 
 #client side JS library
-#public/lib/
+bower_components

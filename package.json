@@ -1,9 +1,24 @@
 {
-  "name": "PhoneGap_app",
+  "name": "nodejs",
   "description": "server for phongap app",
   "version": "0.0.1",
   "private": true,
   "dependencies": {
     "express": "3.0.0"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "main": "server.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/stepankarslyan/nodejs.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/stepankarslyan/nodejs/issues"
+  },
+  "homepage": "https://github.com/stepankarslyan/nodejs"
 }
