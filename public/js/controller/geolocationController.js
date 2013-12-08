@@ -31,23 +31,24 @@ app.geolocationController = {
 		var controller = this;
 		
 		$.ajax({
-      type: "POST",
-      url: "/geolocation",
-      data: {
-      	location: JSON.stringify(location)
-      },
-      success: function() {
-	      controller.displaySuccess("Your data is sent to the server!");
-      },
-       
-      error: function(err) {
-	      controller.displayError({
-	        message: "There's some problems!",
-	        code: err.status
-	      });
-      }
+			type: "POST",
+			url: "/geolocation",
+			data: {
+				location: JSON.stringify(location)
+			},
+			
+			success: function() {
+				controller.displaySuccess("Your data is sent to the server!");
+			},
+			
+			error: function(err) {
+				controller.displayError({
+					message: "There's some problems!",
+					code: err.status
+				});
+			}
       
-    });		     
+		});		     
 	}, 
 	
 	displayError: function(error) {
@@ -55,8 +56,7 @@ app.geolocationController = {
 	},
 	
 	displaySuccess: function(message) {
-	  alert(message);
+		alert(message);
 	}
 	
 };
-
