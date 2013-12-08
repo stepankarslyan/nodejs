@@ -36,6 +36,7 @@ app.geolocationController = {
 			data: {
 				location: JSON.stringify(location)
 			},
+			
 			success: function() {
 				controller.displaySuccess("Your data is sent to the server!");
 			},
