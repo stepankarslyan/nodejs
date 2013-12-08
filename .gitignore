@@ -6,10 +6,10 @@
 node_modules/
 
 #log file
-*/log/
+#*/log/
 
 #uploaded pictures
-*/pictures
+#*/pictures
 
 #client side JS library
 bower_components
