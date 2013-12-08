@@ -2,7 +2,7 @@ var fs = require('fs');
 
 module.exports = {
 	
-	log: function(location, done) {
+	log: function(location, done) {	
 		fs.appendFile('log/locationLog.txt', this.formatLocationLog(location) , function(err) {
 			if (err) done(501);
 			done(200);
