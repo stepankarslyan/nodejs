@@ -16,7 +16,7 @@ app.geolocationController = {
 					speed: position.coords.speed,
 					timestamp: position.timestamp,
 				};
-				
+
 				controller.sendGeolocation(location);	
 			},
 			

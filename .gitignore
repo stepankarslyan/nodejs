@@ -5,8 +5,5 @@
 #nodejs modules
 node_modules/
 
-#log file
-log/
-
 #client side JS library
 bower_components
