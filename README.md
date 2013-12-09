@@ -3,6 +3,8 @@ nodejs
 
 nodejs for phonegap
 
+Remove comments of code review when it's done
+
 !!! DON'T FORGET TO DO THIS !!!
 !!! DON'T COMMIT GENERATED CODE, USE .gitignore TO HELP !!!
 
