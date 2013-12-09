@@ -4,6 +4,7 @@
   "homepage": "https://github.com/stepankarslyan/nodejs",
   "license": "MIT",
   "private": true,
+  // Same comment than package json, add things when you need it don't put homepage, licence, ignore
   "ignore": [
     "**/.*",
     "node_modules",
