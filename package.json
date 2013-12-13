@@ -2,19 +2,8 @@
   "name": "nodejs",
   "description": "server for phongap app",
   "version": "0.0.1",
-  "private": true,
+  "private": "true",
   "dependencies": {
     "express": "3.0.0"
-  },
-  "main": "server.js",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/stepankarslyan/nodejs.git"
-  },
-  "license": "BSD-2-Clause", // Don't put licence that we don't have, In general don't put too much code copy paste that we don't use
-  // main, repository, bugs, homepage are not necessary
-  "bugs": {
-    "url": "https://github.com/stepankarslyan/nodejs/issues"
-  },
-  "homepage": "https://github.com/stepankarslyan/nodejs"
+  }
 }
