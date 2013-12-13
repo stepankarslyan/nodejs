@@ -6,24 +6,8 @@ app.geolocationController = {
 		app.geolocationService.getGeolocation({
 		
 			onSuccess: function(position) {
-				
-				// Why don't you simplify to something equivalent ?
-				// controller.sendGeolocation(position.coords);
-				// But you could simply send position too
-				// controller.sendGeolocation(position);
-				// Stay simple, don't adapt objects if noone asked for it
-				var location = {
-					latitude: position.coords.latitude,
-					longitude: position.coords.longitude,
-					altitude: position.coords.altitude,
-					accuracy: position.coords.accuracy,
-					altitudeAccuracy: position.coords.altitudeAccuracy,
-					heading: position.coords.heading,
-					speed: position.coords.speed,
-					timestamp: position.timestamp,
-				};
 
-				controller.sendGeolocation(location);	
+				controller.sendGeolocation(position);	
 			},
 			
 			onError: function(error) {
@@ -34,14 +18,14 @@ app.geolocationController = {
 	},
 	
 	// You could send position directly
-	sendGeolocation: function(location) {
+	sendGeolocation: function(position) {
 		var controller = this;
 		
 		$.ajax({
 			type: "POST",
 			url: "/geolocation",
 			data: { // data is on multiple line it's better to let a line before and after to help readers see the block of code
-				location: JSON.stringify(location)
+				location: JSON.stringify(position)
 			},
 			
 			success: function() {
