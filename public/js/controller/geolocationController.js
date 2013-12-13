@@ -16,29 +16,27 @@ app.geolocationController = {
 			
 		});	
 	},
-	
-	// You could send position directly
+
 	sendGeolocation: function(position) {
 		var controller = this;
 		
 		$.ajax({
 			type: "POST",
 			url: "/geolocation",
-			data: { // data is on multiple line it's better to let a line before and after to help readers see the block of code
-				location: JSON.stringify(position)
+			
+			data: {
+				position: JSON.stringify(position)
 			},
 			
 			success: function() {
 				controller.displaySuccess("Your data is sent to the server!");
 			},
 
-			// Don't use abbreviation, prefer error to err
-			error: function(err) {
+			error: function(error) {
 				controller.displayError({
 					
-					// Can you try to get the error message from server ?
 					message: "There's some problems!",
-					code: err.status
+					code: error.status
 				});
 			}
       
