@@ -1,11 +1,9 @@
-# Don't put so many comments for just 2 folders, it's giving no real information. Keep comments only if it really add an information
 #################
 ## Nodejs
 #################
 
 #nodejs modules
-# Why do you put "/" here and not for bower_components?
 node_modules/
 
 #client side JS library
-bower_components
+bower_components/
