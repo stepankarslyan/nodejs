@@ -4,8 +4,7 @@ app.geolocationController = {
 		var controller = this;
 		
 		app.geolocationService.getGeolocation({
-		
-			onSuccess: function(position) { // why empty line at beginning of this function? Keep your code standard, do things for a reason always
+			onSuccess: function(position) {
 
 				controller.sendGeolocation(position);	
 			},
@@ -33,8 +32,7 @@ app.geolocationController = {
 			},
 
 			error: function(error) {
-				controller.displayError({ // why a empty line at beginning of properties of this object? keep your code standard, do things only when there is a reason
-					
+				controller.displayError({
 					message: "There's some problems!",
 					code: error.status
 				});
