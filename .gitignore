@@ -1,9 +1,2 @@
-#################
-## Nodejs
-#################
-
-#nodejs modules
 node_modules/
-
-#client side JS library
 bower_components/
