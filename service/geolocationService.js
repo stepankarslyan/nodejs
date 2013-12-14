@@ -4,7 +4,7 @@ module.exports = {
 	
 	log: function(position, done) {	
 		console.log(position);
-		done();
+		done(); // why an empty line after this?
 	
 	}
 	
