@@ -3,10 +3,16 @@ var fs = require("fs");
 module.exports = {
 	
 	save: function(picture, done) {
-		fs.writeFile("output.jpeg", picture, 'base64', function(error) {
-			console.log(error);
+		var fileName = "output ";
+				
+		var formatFileName = function(fileName) {
+			return fileName + new Date();
+		};
+		
+		fs.writeFile(formatFileName(fileName) + ".jpeg", picture, 'base64', function(error) {
 			done(error);
 		});
+
 	}
 	
 };
