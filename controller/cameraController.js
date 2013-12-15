@@ -1,4 +1,4 @@
-var cameraService = require('./service/cameraService');
+var cameraService = require('../service/cameraService');
 module.exports = {
 	save: function(req, res) {
 		var picture = req.body.picture;
