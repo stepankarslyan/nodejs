@@ -3,6 +3,7 @@ var app = express();
 //var controller = require("/js/controller.js"); 
 
 var geolocationController = require('./controller/geolocationController');
+var cameraController = require("./controller/cameraController");
 
 app.configure(function() {
   app.use(express.static(__dirname + '/public'));
@@ -10,6 +11,12 @@ app.configure(function() {
 });
 
 app.post('/geolocation', geolocationController.log);
+app.post("/camera", cameraController.savePicture);
+
+app.get("/hello", function(req, res) {   
+  res.send("hello Olivier");
+  
+});
 
 var port = 8080;
 app.listen(port);
