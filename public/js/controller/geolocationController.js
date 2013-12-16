@@ -3,8 +3,8 @@ app.geolocationController = {
 	getGeolocation: function() {		
 		var controller = this;
 		
-		app.geolocationService.getGeolocation({
-			onSuccess: function(position) {
+		app.geolocationService.getGeolocation({ // always put one empty line before and after function declaration
+			onSuccess: function(position) { // Remove this empty line
 
 				controller.sendGeolocation(position);	
 			},
@@ -33,6 +33,7 @@ app.geolocationController = {
 
 			error: function(error) {
 				controller.displayError({
+					// Ins't there any text from error that could be displayed in place of this? static message?
 					message: "There's some problems!",
 					code: error.status
 				});
@@ -42,6 +43,8 @@ app.geolocationController = {
 	}, 
 	
 	displayError: function(error) {
+		// If no format is asked stay simple, you can use
+		// error.code + ' - ' + error.message
 		alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
 	},
 	
