@@ -1,5 +1,7 @@
 var express = require('express');
 var app = express();
+
+// Don't let unused code, you have git for history !
 //var controller = require("/js/controller.js"); 
 
 var geolocationController = require('./controller/geolocationController');
