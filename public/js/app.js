@@ -1,6 +1,6 @@
 var app = {
 
-	bootstrap: function() {
+	sendGeolocation: function() {
 		this.geolocationController.getGeolocation();
 	}
 	
