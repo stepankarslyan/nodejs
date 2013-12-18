@@ -42,6 +42,8 @@ app.cameraController = {
 	},
 	
 	displayError: function(error) {
+		// Try to stay standard and use the same kind of display in all you code
+		// use error.code + ' - ' + error.message
 		alert("error: " + error);
 	}
 	

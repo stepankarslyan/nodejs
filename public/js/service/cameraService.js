@@ -1,5 +1,5 @@
 app.cameraService = {
-	getPicture: function(config) {
+	getPicture: function(config) { // Add an empty line before and after each function declaration
 		navigator.camera.getPicture(
 			function(picture) {
 				config.onSuccess(picture);
