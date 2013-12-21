@@ -31,7 +31,7 @@ app.cameraController = {
 			},
 			
 			error: function(error) {
-				controller.displayError(eror);
+				controller.displayError(error);
 			}
 			
 		});
@@ -42,9 +42,19 @@ app.cameraController = {
 	},
 	
 	displayError: function(error) {
-		// Try to stay standard and use the same kind of display in all you code
-		// use error.code + ' - ' + error.message
-		alert("error: " + error);
+		if(error.message == undefined && typeof(error) != 'string') {
+			alert("Code: " + error.status + ' ' + error.statusText);
+		}
+		else {
+			
+			if(typeof(error) == 'string') {
+				alert(error);
+			}
+			else {
+				alert("Code: " + error.code + ' ' + error.message);
+			}
+			
+		}
 	}
 	
 };
