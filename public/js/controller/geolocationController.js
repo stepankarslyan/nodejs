@@ -4,8 +4,8 @@ app.geolocationController = {
 		var controller = this;
 		
 		app.geolocationService.getGeolocation({
+		
 			onSuccess: function(position) {
-
 				controller.sendGeolocation(position);	
 			},
 			
@@ -32,17 +32,14 @@ app.geolocationController = {
 			},
 
 			error: function(error) {
-				controller.displayError({
-					message: "There's some problems!",
-					code: error.status
-				});
+				controller.displayError(error);
 			}
       
 		});		     
 	}, 
 	
 	displayError: function(error) {
-		alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
+		alert('code: ' + error.code + ' ' + error.message);
 	},
 	
 	displaySuccess: function(message) {
