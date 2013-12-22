@@ -3,7 +3,7 @@ var geolocationService = require('../service/geolocationService');
 module.exports = {
 	
 	register: function(app) {
-		app.post('/geolocation', geolocationController.log);
+		app.post('/geolocation', this.log);
 	},
 
 	log: function(req, res) {

@@ -3,7 +3,7 @@ var cameraService = require('../service/cameraService');
 module.exports = {
 	
 	register: function(app) {
-		app.post('/camera', cameraController.save);
+		app.post('/camera', this.save);
 	},
 	
 	save: function(req, res) {
