@@ -1,8 +1,6 @@
+var _ = require('underscore');
 var express = require('express');
 var app = express();
-
-var geolocationController = require('./controller/geolocationController');
-var cameraController = require('./controller/cameraController');
 
 app.configure(function() {
 	app.use(express.static(__dirname + '/public'));
@@ -10,8 +8,14 @@ app.configure(function() {
 	app.use(express.bodyParser());
 });
 
-geolocationController.register(app);
-cameraController.register(app);
+var controllers = [
+	'geolocation',
+	'camera'
+];
+
+_.each(controllers, function(controller) {
+	require('./controller/' + controller + 'Controller').register(app);
+});
 
 var port = 8080;
 app.listen(port);
