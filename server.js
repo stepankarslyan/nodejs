@@ -1,10 +1,12 @@
 var express = require('express');
 var app = express();
-//var _ = require('underscore');
+var mongoose = require("mongoose");
+mongoose.connect("mongodb://localhost/test");
 
 var geolocationController = require('./controller/geolocationController');
 var cameraController = require('./controller/cameraController');
 var userController = require('./controller/userController');
+var userLoginController = require('./controller/userLoginController');
 
 app.configure(function() {
 	app.use(express.static(__dirname + '/public'));
@@ -15,6 +17,7 @@ app.configure(function() {
 app.post('/geolocation', geolocationController.log);
 app.post('/camera', cameraController.save);
  app.post("/reguser", userController.add);
+ app.post("/userLogin", userLoginController.login);
  
 var port = 8080;
 app.listen(port);

@@ -8,14 +8,14 @@ var userProp = {
 };
 
 var userSchema = new mongoose.Schema(userProp);
-var DbRegUser = mongoose.model("regUser", userSchema);
-mongoose.connect("mongodb://localhost/test");
+var DbRegUser = mongoose.model("regUsers", userSchema);
+
 
 module.exports = {
 
   add: function(user, done) {
     var dbRegUser = new DbRegUser(user);
-    DbRegUser.findOne({ login: user.login }, function (err, regUser) {
+      DbRegUser.findOne({ login: user.login }, function (err, regUser) {
       console.log(regUser);
       if(regUser) {
       
@@ -24,7 +24,7 @@ module.exports = {
       }else{
         
         dbRegUser.save();
-        done('you are registred successly');
+        done('You are registered successfully');
      
       }
     });
