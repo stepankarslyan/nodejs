@@ -12,9 +12,9 @@ var DbUser = mongoose.model("regUser", userSchema);
 module.exports = {
 
   add: function(config) {
-    var dbRegUser = new DbRegUser(user);
+    var dbRegUser = new DbRegUser(config.user);
 
-      DbRegUser.findOne({ login: user.login }, function (err, regUser) {
+      DbRegUser.findOne({ login: config.user.login }, function (err, regUser) {
       
         if(regUser) {
           console.log("The user with" + " " + user.login + " "  + "login already exists!");

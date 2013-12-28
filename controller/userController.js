@@ -8,11 +8,11 @@ module.exports = {
     userService.add({
       user: user,
       
-      onSucess(message){
+      onSucess: function(message) {
         res.send(message);
       },
       
-      onError(error){
+      onError: function(error) {
         res.statusCode = 500;
         res.send(error);
       }

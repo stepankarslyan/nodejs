@@ -1,17 +1,17 @@
 var mongoose = require("mongoose");
-var DbRegedUser = mongoose.model("regUsers");
+var DbRegedUser = mongoose.model("regUser");
 
 module.exports = {
   
-  login: function(user, done) {
-    
-    DbRegedUser.findOne({login: user.login}, function(err, loggedUser) {
+  login: function(config) {
+    console.log(config.user);
+    DbRegedUser.findOne({login: config.user.login}, function(err, loggedUser) {
       
       if(loggedUser) {
-        done("Welcome, you are logged in!");
+        config.onSuccess("Welcome, you are logged in!");
       }
       else{
-        done("Please register!");  
+        config.onError("Please register!");  
       }
     
     });
