@@ -1,3 +1,4 @@
+// YOU FORGOT TO CORRECT AFTER CODE REVIEW OF THIS FILE !!!
 var cameraService = require('../service/cameraService');
 
 module.exports = {
