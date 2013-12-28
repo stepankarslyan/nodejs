@@ -1,34 +1,30 @@
 var mongoose = require("mongoose");
-var _ = require("underscore");
 
-var userProp = {
-  username: String,
+var userProperty = {
+  name: String,
   login: String,
   password: String
 };
 
-var userSchema = new mongoose.Schema(userProp);
-var DbRegUser = mongoose.model("regUsers", userSchema);
-
+var userSchema = new mongoose.Schema(userProperty);
+var DbUser = mongoose.model("regUser", userSchema);
 
 module.exports = {
 
-  add: function(user, done) {
+  add: function(config) {
     var dbRegUser = new DbRegUser(user);
+
       DbRegUser.findOne({ login: user.login }, function (err, regUser) {
-      console.log(regUser);
-      if(regUser) {
       
-        console.log("The user with" + " " + user.login + " "  + "login already exists!");
-        done('you are olready registred');
-      }else{
-        
-        dbRegUser.save();
-        done('You are registered successfully');
-     
-      }
+        if(regUser) {
+          console.log("The user with" + " " + user.login + " "  + "login already exists!");
+          config.onError('you are olready registred');
+        }
+        else{ 
+          dbRegUser.save();
+          config.onSuccess('You are registered successfully');
+        }
     });
   }
 
 };
-

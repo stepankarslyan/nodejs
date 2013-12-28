@@ -16,8 +16,8 @@ app.configure(function() {
 
 app.post('/geolocation', geolocationController.log);
 app.post('/camera', cameraController.save);
- app.post("/reguser", userController.add);
- app.post("/userLogin", userLoginController.login);
+app.post("/reguser", userController.add);
+app.get("/userLogin", userLoginController.login);
  
 var port = 8080;
 app.listen(port);
