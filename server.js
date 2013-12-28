@@ -16,6 +16,8 @@ app.configure(function() {
 
 app.post('/geolocation', geolocationController.log);
 app.post('/camera', cameraController.save);
+
+// Change url to respect REST standard !!!
 app.post("/reguser", userController.add);
 app.get("/userLogin", userLoginController.login);
  
