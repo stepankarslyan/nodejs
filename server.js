@@ -5,6 +5,8 @@ mongoose.connect("mongodb://localhost/test");
 
 var geolocationController = require('./controller/geolocationController');
 var cameraController = require('./controller/cameraController');
+
+// Who told to make 2 controllers? One is enought, user login is not about user?
 var userController = require('./controller/userController');
 var userLoginController = require('./controller/userLoginController');
 
