@@ -9,7 +9,8 @@ module.exports = {
       
       if(loggedUser) {
         done("Welcome, you are logged in!");
-      }else{
+      }
+      else{
         done("Please register!");  
       }
     
