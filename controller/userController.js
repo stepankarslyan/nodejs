@@ -3,13 +3,12 @@ var userService = require("../service/userService");
 module.exports = {
   
   add: function(req ,res) {
-    var user = req.body.user;
-   
-    userService.add({
-      user: user,
       
-      onSucess: function(message) {
-        res.send(message);
+    userService.add({
+      user: req.body.user, 
+      
+      onSuccess: function(user) { 
+        res.send(user);
       },
       
       onError: function(error) {
@@ -18,6 +17,26 @@ module.exports = {
       }
       
     });
+  
+  },
+   
+  login: function(req, res) {      
+    userService.login(
+    { 
+      user: req.query.user, 
+    
+      onSuccess: function(user) {
+        res.statusCode = 200;
+        res.send(user); 
+      },
+    
+      onError: function(error) {
+        res.statusCode = 500;
+        res.send(error);
+      }
+    
+    }
+    );
   }
 
 };

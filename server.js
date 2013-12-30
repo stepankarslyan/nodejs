@@ -5,8 +5,10 @@ mongoose.connect("mongodb://localhost/test");
 
 var geolocationController = require('./controller/geolocationController');
 var cameraController = require('./controller/cameraController');
+
+// Who told to make 2 controllers? One is enought, user login is not about user?
 var userController = require('./controller/userController');
-var userLoginController = require('./controller/userLoginController');
+
 
 app.configure(function() {
 	app.use(express.static(__dirname + '/public'));
@@ -16,8 +18,10 @@ app.configure(function() {
 
 app.post('/geolocation', geolocationController.log);
 app.post('/camera', cameraController.save);
-app.post("/reguser", userController.add);
-app.get("/userLogin", userLoginController.login);
+
+// Change url to respect REST standard !!!
+app.post("/users/registration", userController.add);
+app.get("/user/login/id", userController.login);
  
 var port = 8080;
 app.listen(port);
