@@ -4,20 +4,20 @@ module.exports = {
 	
 	register: function(app) {
 
-		app.post('/camera', function(req, res) {
+		app.post('/pictures', function(req, res) {
 		
 			cameraService.save(req.body.picture, function(error) {
 				if(error) {
-					res.setHeader("Picture not saved", 500);
+					res.statusCode = 500;
 					res.send(error);
 				}
-			
-				response.setHeader("Picture saved successly", 200);
+				response.setHeader("Picture saved successly", 200); //it's this  you want ?
 				res.send();
 			});
 			
 		});
-	/*	
+	/*
+	i let this code in comment because for now i dont have needed code in CameraService, and mongodb
 		app.get('/pictures/id', function(req, res) {
 			
 			cameraService.get(req.query.id, function(error, picture) {
