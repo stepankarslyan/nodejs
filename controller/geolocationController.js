@@ -7,11 +7,12 @@ module.exports = {
 		
 			geolocationService.log(req.body.position, function(error) {
 				if(error) {
-					res.statusCode = 500;
+					res.setHeader("Geolocation not saved", 500);
 					res.send(error);
 				}
 				res.send();
-			});	
+			});
+				
 		});
 	},
 
