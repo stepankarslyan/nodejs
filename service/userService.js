@@ -12,16 +12,16 @@ var DbUser = mongoose.model("regUser", userSchema);
 module.exports = {
 
   add: function(config) {
-    var dbRegUser = new DbRegUser(config.user);
+    var dbUser = new DbUser(config.user);
 
-      DbRegUser.findOne({ login: config.user.login }, function (err, regUser) {
+      DbUser.findOne({ login: config.user.login }, function (err, regUser) {
       
         if(regUser) {
-          console.log("The user with" + " " + user.login + " "  + "login already exists!");
+          console.log("The user with" + " " + config.user.login + " "  + "login already exists!");
           config.onError('you are olready registred');
         }
         else{ 
-          dbRegUser.save();
+          dbUser.save();
           config.onSuccess('You are registered successfully');
         }
     });
