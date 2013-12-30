@@ -36,6 +36,34 @@ module.exports = {
           };  
       }
     );  
+  },
+  
+  findUsers: function(config) {
+    
+    DbUser.find(function(error, reggedUsers) {
+      if(error) {
+        config.onError(error);
+      }
+      else{
+        config.onSuccess(config.users)
+      }
+    });
+  }, 
+  
+  updateUser: function(config) {
+    //var dbUser = new DbUser(config.user);
+    DbUser.findOneAndUpdate({ login: config.user.login}, config.user,
+    
+    function(error, user) {
+      if(error) {
+        config.onError(error);
+      }
+      else{
+        config.onSuccess(config.user)
+        console.log(config.user);
+      }
+      
+    });
   }
   
 };

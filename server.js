@@ -22,6 +22,8 @@ app.post('/camera', cameraController.save);
 // Change url to respect REST standard !!!
 app.post("/users/registration", userController.add);
 app.get("/user/login/id", userController.login);
+app.get("/users", userController.findUsers);
+app.put("/update/user/id", userController.updateUser);
  
 var port = 8080;
 app.listen(port);

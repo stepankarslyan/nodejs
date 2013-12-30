@@ -21,8 +21,7 @@ module.exports = {
   },
    
   login: function(req, res) {      
-    userService.login(
-    { 
+    userService.login({ 
       user: req.query.user, 
     
       onSuccess: function(user) {
@@ -35,8 +34,42 @@ module.exports = {
         res.send(error);
       }
     
-    }
-    );
+    });
+  },
+  
+  findUsers: function(req, res) {
+    userService.findUsers({
+      users: req.query.users,
+      
+      onSuccess: function(users) {
+        res.send(users);
+        res.statusCode = 200;
+      },
+      
+      onError: function(error) {
+        res.send(error);
+        res.statusCode = 500;
+      },  
+      
+    });
+  }, 
+  
+  updateUser: function(req, res) {
+    console.log(req.body.user);
+    userService.updateUser({
+      user: req.body.user,
+      
+      onSuccess: function(user) { 
+        res.statusCode = 200;
+        res.send(user);
+      },
+      
+      onError: function(error) {
+        res.statusCode = 500;
+      }
+      
+    });
+    
   }
 
 };
