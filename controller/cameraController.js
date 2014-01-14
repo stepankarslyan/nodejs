@@ -8,17 +8,17 @@ module.exports = {
 	},
 	
 	save: function(req, res) {
-		cameraService.save(req.body.picture, function(error) {
-			if(error) {
-				res.statusCode = 500;
-				res.send(error);
+		cameraService.save({picture: req.body.picture, 
+			onSuccess: function(id) {
+					res.setHeader('/pictures/' + id, 201);
+					res.send();			
+			},
+			
+			onError: function(error) {
+					res.statusCode = 500;
+					res.send(error);
 			}
-			else{
-				response.setHeader("Picture saved successly", 200);
-				// No need for message 200 means it's ok but there are http code 200 that are more precise
-				// 201, 202... search one with more meaning than simple 200
-				res.send();			
-			}
+		
 		});
 	}
 	
