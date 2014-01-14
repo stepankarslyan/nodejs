@@ -51,7 +51,7 @@ module.exports = {
   }, 
   
   updateUser: function(config) {
-    //var dbUser = new DbUser(config.user);
+   
     DbUser.findOneAndUpdate({ login: config.user.login}, config.user,
     
     function(error, user) {
