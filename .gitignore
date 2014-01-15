@@ -6,3 +6,5 @@
 node_modules/
 bower_components/
 uploadedPicture/*.jpeg
+.gitignore
+*.log
