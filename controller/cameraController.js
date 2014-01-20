@@ -8,7 +8,7 @@ module.exports = {
 	},
 	
 	save: function(req, res) {
-		cameraService.save({picture: req.body.picture, 
+		cameraService.save({picture: JSON.parse(req.body.picture), 
 			onSuccess: function(id) {
 					res.setHeader('/pictures/' + id, 201);
 					res.send();			
